@@ -1,11 +1,11 @@
 <h1>Showing List</h1>
 
   <% if flash[:notice] %>
-  
-  #Experiencing a problem with this action - undefined method `name' for nil:NilClass
     <p>
       name: <%= @todo.name %>
     </p>
+    <p>description: <%= @todo.description %></p>
+    
     <%= link_to "Edit this Item", edit_todo_path(@todo) %> | 
     <%= link_to "Back to List", todos_path %>
     
