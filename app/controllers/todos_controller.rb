@@ -13,7 +13,21 @@ class TodosController < ApplicationController
   end
   
   def show
-    
+    @todo = Todo.find(params[:id])
+  end
+  
+  def edit
+    @todo = Todo.find(params[:id])
+  end
+  
+  def update
+    @todo = Todo.new(todo_params)
+  if @todo.save
+    flash[:notice] = "Item Listed succesfully"
+    redirect_to todo_path(@todo)
+  else
+    render 'edit'
+  end
   end
   
   private
